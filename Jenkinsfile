@@ -21,17 +21,17 @@ pipeline {
 						}
 						stage('gen-project-files-windows') {
 							steps {
-								bat "\"C:/Program Files/Epic Games/UE_5.3/Engine/Binaries/DotNET/UnrealBuildTool/UnrealBuildTool.exe\" -projectfiles -project=\"$WORKSPACE\\CozyScape.uproject\""
+								bat "\"C:/Program Files/Epic Games/UE_5.4/Engine/Binaries/DotNET/UnrealBuildTool/UnrealBuildTool.exe\" -projectfiles -project=\"$WORKSPACE\\CozyScape.uproject\""
 							}
 						}
 						stage('build-windows') {
 							steps {
-								bat "\"C:/Program Files/Epic Games/UE_5.3/Engine/Build/BatchFiles/RunUAT\" BuildCookRun -project=\"$WORKSPACE\\CozyScape.uproject\" -clientconfig=Development -targetplatform=Win64 -noP4 -cook -allmaps -build -stage -pak -archive -archivedirectory=\"$WORKSPACE\\builds\""
+								bat "\"C:/Program Files/Epic Games/UE_5.4/Engine/Build/BatchFiles/RunUAT\" BuildCookRun -project=\"$WORKSPACE\\CozyScape.uproject\" -clientconfig=Development -targetplatform=Win64 -noP4 -cook -allmaps -build -stage -pak -archive -archivedirectory=\"$WORKSPACE\\builds\""
 							}
 						}
 						stage('compile-blueprints-windows') {
 							steps {
-								bat "\"C:/Program Files/Epic Games/UE_5.3/Engine/Binaries/Win64/UnrealEditor-Cmd.exe\" \"$WORKSPACE\\CozyScape.uproject\" -run=CompileAllBlueprints"
+								bat "\"C:/Program Files/Epic Games/UE_5.4/Engine/Binaries/Win64/UnrealEditor-Cmd.exe\" \"$WORKSPACE\\CozyScape.uproject\" -run=CompileAllBlueprints"
 							}
 						}
 						stage('archive-windows') {
