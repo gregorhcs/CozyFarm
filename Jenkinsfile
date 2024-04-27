@@ -26,7 +26,7 @@ pipeline {
 						}
 						stage('build-windows') {
 							steps {
-								bat "\"C:/Program Files/Epic Games/UE_5.4/Engine/Build/BatchFiles/RunUAT\" BuildCookRun -project=\"$WORKSPACE\\CozyScape.uproject\" -clientconfig=Development -targetplatform=Win64 -noP4 -cook -allmaps -build -stage -pak -archive -archivedirectory=\"$WORKSPACE\\builds\""
+								bat "\"C:/Program Files/Epic Games/UE_5.4/Engine/Build/BatchFiles/RunUAT\" BuildCookRun -project=\"$WORKSPACE\\CozyScape.uproject\" -clientconfig=Shipping -targetplatform=Win64 -noP4 -cook -allmaps -build -stage -pak -archive -archivedirectory=\"$WORKSPACE\\builds\""
 							}
 						}
 						stage('compile-blueprints-windows') {
