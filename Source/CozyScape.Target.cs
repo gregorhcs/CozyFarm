@@ -11,5 +11,8 @@ public class CozyScapeTarget : TargetRules
 		DefaultBuildSettings = BuildSettingsVersion.V5;
 		IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_4;
 		ExtraModuleNames.Add("CozyScape");
+		
+		GlobalDefinitions.Add("ALLOW_CONSOLE_IN_SHIPPING=1");
+		GlobalDefinitions.Add("UE_WITH_CHEAT_MANAGER=1");
 	}
 }
